@@ -1,11 +1,12 @@
 require('../spec.helper')
 
 describe('Play a game of RPS', () => {
-    
-    it('stores a player choice', () => {
-    })
+    new GameRPS
 
-    it('returns a computer choice', () => {
+    it('returns a computer choice that is R/P/S', () => {
+        let cpuChoice = GameRPS.computerChoice()
+        cpuChoicesArray = ['rock', 'paper', 'scissors']
+        expect(cpuChoicesArray).to.include(cpuChoice)
     })
 
     it('returns Rock as winner vs Scissors', () => {

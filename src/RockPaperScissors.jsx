@@ -1,8 +1,10 @@
 import React, { Component } from "react";
+import GameRPS from "./GameRPS"
 
 class RockPaperScissors extends Component {
     constructor() {
         super();
+        new GameRPS
         this.state = {
             playerChoice: null,
             cpuChoice: null,
@@ -14,20 +16,28 @@ class RockPaperScissors extends Component {
 
     playerSelection = (choice) => {
         this.setState({ playerChoice: choice })
+        
+        this.setState({ cpuChoice: GameRPS.computerChoice()})
     }
 
     displayPlayerChoice = () => {
         let playerChoice = this.state.playerChoice
         if (playerChoice != null) {
-            console.log(this.state.playerChoice)
             return <div id="player-choice">You chose {playerChoice}</div>
         }
     }
 
-
+    displayComputerChoice = () => {
+        let cpuChoice = this.state.cpuChoice
+        if (cpuChoice != null) {
+            return <div id="computer-choice">AI chose {cpuChoice}</div>
+        }
+    }
+ 
 
     render() {
-        let renderPlayerChoice = this.displayPlayerChoice()
+        let renderPlayerChoice = this.displayPlayerChoice() 
+        let renderCpuChoice = this.displayComputerChoice()
         return (
             <>
                 <div>
@@ -37,10 +47,9 @@ class RockPaperScissors extends Component {
                 </div>
 
                 <div id="round-info">
-                    {renderPlayerChoice}
-
+                    {renderPlayerChoice}<br></br>
+                    {renderCpuChoice}
                 </div>
-
             </>
         )
     }
