@@ -21,13 +21,13 @@ context('Rock-Paper-Scissors', () => {
         it('can choose Rock', () => {
             cy.get('#rock-button')
               .click()
-              get('#player-choice')
-              .should('contain', 'You choose ')
+              .get('#player-choice')
+              .should('contain', 'You chose rock')
         });
 
         it('can read the computers choice', () => {
             cy.get('#computer-choice')
-              .should('contain', 'AI choose ')
+              .should('contain', 'AI chose ')
         });
 
         it('gets a result', () => {

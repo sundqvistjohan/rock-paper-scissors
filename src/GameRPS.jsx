@@ -1,5 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 
-class GameRPS extends Component {
+const playerSelection = (choice) => {
     
 }
