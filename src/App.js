@@ -1,12 +1,10 @@
 import React from 'react';
-import './App.css';
+import RockPaperScissors from "./RockPaperScissors"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        ROCK - PAPER - SCISSORS
-      </header>
+      <RockPaperScissors />
     </div>
   );
 }

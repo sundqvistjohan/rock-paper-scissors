@@ -9,25 +9,26 @@ context('Rock-Paper-Scissors', () => {
         });
 
         it('has a Paper button', () => {
-            cy.get('#rock-button')
+            cy.get('#paper-button')
               .should('contain', 'Paper')
         });
 
         it('has a Scissors button', () => {
-            cy.get('#rock-button')
+            cy.get('#scissors-button')
               .should('contain', 'Scissors')
         });
 
-        it('can play the game choosing Rock', () => {
+        it('can choose Rock', () => {
             cy.get('#rock-button')
               .click()
+              get('#player-choice')
+              .should('contain', 'You choose ')
         });
 
         it('can read the computers choice', () => {
-            cy.get('#computer-play')
-              .should('containt', 'AI choose ')
+            cy.get('#computer-choice')
+              .should('contain', 'AI choose ')
         });
-
 
         it('gets a result', () => {
             cy.get('#round-result')
