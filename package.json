@@ -17,7 +17,8 @@
     "stop-test-server": "lsof -ti tcp:$PORT | xargs kill",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cy:open": "yarn run cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
