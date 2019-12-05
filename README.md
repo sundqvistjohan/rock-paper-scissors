@@ -2,7 +2,7 @@
 ## Rock - Paper - Scissors
 
 A classic Rock-Paper-Scissors game. Singleplayer versus an AI employing a Game Theory Optimal strategy.  
-Deployed at sundq-rps.netlify.com.
+Deployed at [sundq-rps.netlify.com](https://sundq-rps.netlify.com).
 
 ### Built With
 The site is built in React using Create-React-App. Feature testing using cypress and unit tests using e2e_training_wheels.
