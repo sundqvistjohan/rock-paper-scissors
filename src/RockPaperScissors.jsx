@@ -64,6 +64,8 @@ class RockPaperScissors extends Component {
                 <div id="round-info">
                     {renderPlayerChoice}<br></br>
                     {renderCpuChoice}<br></br>
+                </div>
+                <div id="round-result">
                     {renderResult}<br></br>
                 </div>
                 <div className="game-info">

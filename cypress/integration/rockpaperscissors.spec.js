@@ -26,13 +26,17 @@ context('Rock-Paper-Scissors', () => {
         });
 
         it('can read the computers choice', () => {
-            cy.get('#computer-choice')
+            cy.get('#paper-button')
+              .click()
+              .get('#computer-choice')
               .should('contain', 'AI chose ')
         });
 
         it('gets a result', () => {
-            cy.get('#round-result')
-              .should('contain', 'Win!')
+            cy.get('#scissors-button')
+              .click()
+              .get('#round-result')
+              .should('contain', 'wins!')
         });
         
         
