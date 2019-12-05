@@ -17,15 +17,24 @@ describe('Play a game of RPS', () => {
     })
 
     it('returns Rock as winner vs Scissors', () => {
-        expect(false).to.eql(true)
+        let playerChoice = 'rock'
+        let cpuChoice = 'scissors'
+        roundResult = GameRPS.playRound(playerChoice, cpuChoice)
+        expect(roundResult).to.eql('playerWin')
     })
 
     it('returns Paper as winner vs Rock', () => {
-        expect(false).to.eql(true)
+        let playerChoice = 'rock'
+        let cpuChoice = 'paper'
+        roundResult = GameRPS.playRound(playerChoice, cpuChoice)
+        expect(roundResult).to.eql('computerWin')
     })
 
     it('returns Scissors as winner vs Paper', () => {
-        expect(false).to.eql(true)
+        let playerChoice = 'scissors'
+        let cpuChoice = 'paper'
+        roundResult = GameRPS.playRound(playerChoice, cpuChoice)
+        expect(roundResult).to.eql('playerWin')
     })
 
     

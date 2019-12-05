@@ -20,8 +20,14 @@ class RockPaperScissors extends Component {
 
     playRound = () => {
         let roundResult = GameRPS.playRound(this.state.playerChoice, this.state.cpuChoice)
-        if (roundResult == 'draw') {
+        if (roundResult === 'draw') {
             return <div>It's a draw!</div>
+        } else if (roundResult === 'playerWin') {
+            this.state.playerWins++
+            return <div>Player wins!</div>
+        } else if (roundResult === 'computerWin') {
+            this.state.cpuWins++
+            return <div>AI wins!</div>
         } else {
             return <div></div>
         }
@@ -41,12 +47,12 @@ class RockPaperScissors extends Component {
         }
     }
 
-    
- 
     render() {
         let renderResult = this.playRound()
         let renderPlayerChoice = this.displayPlayerChoice() 
         let renderCpuChoice = this.displayComputerChoice()
+        let playerWinCounter = this.state.playerWins
+        let cpuWinWounter = this.state.cpuWins
         return (
             <>
                 <div>
@@ -57,8 +63,16 @@ class RockPaperScissors extends Component {
 
                 <div id="round-info">
                     {renderPlayerChoice}<br></br>
-                    {renderCpuChoice}
-                    {renderResult}
+                    {renderCpuChoice}<br></br>
+                    {renderResult}<br></br>
+                </div>
+                <div className="game-info">
+                    <div className="player-wincounter">
+                        Player wins: {playerWinCounter}
+                    </div>
+                    <div className="computer-wincounter">
+                        AI wins: {cpuWinWounter}
+                    </div>
                 </div>
             </>
         )
