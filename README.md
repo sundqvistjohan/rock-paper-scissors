@@ -1,5 +1,5 @@
 
-## Rock - Paper - Scissors
+# Rock - Paper - Scissors
 
 A classic Rock-Paper-Scissors game. Singleplayer versus an AI employing a Game Theory Optimal strategy.  
 Deployed at [sundq-rps.netlify.com](https://sundq-rps.netlify.com).
