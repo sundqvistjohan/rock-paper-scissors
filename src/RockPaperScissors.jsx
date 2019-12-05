@@ -8,7 +8,6 @@ class RockPaperScissors extends Component {
         this.state = {
             playerChoice: null,
             cpuChoice: null,
-            gameWinner: null,
             playerWins: 0,
             cpuWins: 0
         }
@@ -16,8 +15,16 @@ class RockPaperScissors extends Component {
 
     playerSelection = (choice) => {
         this.setState({ playerChoice: choice })
-        
-        this.setState({ cpuChoice: GameRPS.computerChoice()})
+        this.setState({ cpuChoice: GameRPS.computerChoice() })
+    }
+
+    playRound = () => {
+        let roundResult = GameRPS.playRound(this.state.playerChoice, this.state.cpuChoice)
+        if (roundResult == 'draw') {
+            return <div>It's a draw!</div>
+        } else {
+            return <div></div>
+        }
     }
 
     displayPlayerChoice = () => {
@@ -33,9 +40,11 @@ class RockPaperScissors extends Component {
             return <div id="computer-choice">AI chose {cpuChoice}</div>
         }
     }
- 
 
+    
+ 
     render() {
+        let renderResult = this.playRound()
         let renderPlayerChoice = this.displayPlayerChoice() 
         let renderCpuChoice = this.displayComputerChoice()
         return (
@@ -49,6 +58,7 @@ class RockPaperScissors extends Component {
                 <div id="round-info">
                     {renderPlayerChoice}<br></br>
                     {renderCpuChoice}
+                    {renderResult}
                 </div>
             </>
         )

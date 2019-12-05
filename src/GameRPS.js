@@ -14,6 +14,15 @@ const GameRPS = function() {
         return 'scissors'
     }
   }
+
+  GameRPS.playRound = (playerChoice, cpuChoice) => {
+
+    if ((playerChoice === cpuChoice) && (playerChoice != null)) {
+      return 'draw'
+    } else {
+      return null
+    }
+  }
 }
 
 
