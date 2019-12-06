@@ -5,30 +5,14 @@ A classic Rock-Paper-Scissors game. Singleplayer versus an AI employing a Game T
 Deployed at [sundq-rps.netlify.com](https://sundq-rps.netlify.com).
 
 ### Built With
-The site is built in React using Create-React-App. Feature testing using cypress and unit tests using e2e_training_wheels.
+The site is built in React using Create-React-App. Feature testing using cypress and unit tests using e2e_training_wheels (mocha/chai).
 * [React](https://reactjs.org/)
 * [Cypress](https://www.cypress.io/)
 * [e2e_training_wheels](https://www.npmjs.com/package/e2e_training_wheels)
 
-## Changelog
-
-Application updates will be tracked in this changelog.
-
-### 0.1 - 2019-12-05
-Beta release with basic gameplay and rudimentary user interface.
-
-
 ## Getting Started
 
 To get a local copy up and running follow the steps outlined below.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-```sh
-npm install npm@latest -g
-```
 
 ### Installation
 
@@ -44,7 +28,7 @@ yarn install
 
 ## Usage
 
-Run local server
+Run local server on localhost:3000
 ```sh
 yarn start
 ```
@@ -61,9 +45,8 @@ yarn run specs
 
 ## Roadmap
 
-Updated styling
-Landing page
-Reset game
+* Add styling
+* Add landing page
 
 ## License
 
