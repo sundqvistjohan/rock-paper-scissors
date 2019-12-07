@@ -12,7 +12,7 @@ class RockPaperScissors extends Component {
             playerChoice: null,
             cpuChoice: null,
             playerWins: 0,
-            cpuWins: 0
+            cpuWins: 0,
         }
     }
 
@@ -24,13 +24,13 @@ class RockPaperScissors extends Component {
     playRound = () => {
         let roundResult = GameRPS.playRound(this.state.playerChoice, this.state.cpuChoice)
         if (roundResult === 'draw') {
-            return <div>It's a draw!</div>
+            return <div>IT'S A DRAW!</div>
         } else if (roundResult === 'playerWin') {
             this.state.playerWins++
-            return <div>Player wins!</div>
+            return <div style={{ color: "darkgreen" }}>PLAYER WINS!</div>
         } else if (roundResult === 'computerWin') {
             this.state.cpuWins++
-            return <div>AI wins!</div>
+            return <div style={{ color: "firebrick" }}>AI WINS!</div>
         } else {
             return <div></div>
         }
@@ -64,15 +64,15 @@ class RockPaperScissors extends Component {
             <div class="ui main container">
                 <div className="ui three column grid">
                     <div className="row">
-                        <div className="column weapon">
-                            <img src={rock} class="weapon-image" onClick={() => this.playerSelection('rock')} />
+                        <div className="column right aligned" id="weapon">
+                            <img src={rock} class="weapon-image rock" onClick={() => this.playerSelection('rock')} />
                             <p>ROCK</p>
                         </div>
-                        <div className="column weapon">
-                            <img src={paper} class="weapon-image" onClick={() => this.playerSelection('paper')} />
+                        <div className="column" id="weapon">
+                            <img src={paper} class="weapon-image paper" onClick={() => this.playerSelection('paper')} />
                             <p>PAPER</p>
                         </div>
-                        <div className="column weapon">
+                        <div className="column left aligned" id="weapon">
                             <img src={scissors} class="weapon-image" onClick={() => this.playerSelection('scissors')} />
                             <p>SCISSORS</p>
                         </div>
@@ -86,19 +86,19 @@ class RockPaperScissors extends Component {
                     </div>
                     <div className="row">
                         <div className="centered column">
-                            <div className="player-wincounter">
-                                Player wins: <br></br>
+                            <div className="ui header player-wincounter">
+                                PLAYER <br></br>
                                 {playerWinCounter}
                             </div>
                         </div>
                         <div className="centered column">
-                            <div id="round-result">
+                            <div id="ui header round-result">
                                 {renderResult}<br></br>
                             </div>
                         </div>
                         <div className="column">
-                            <div className="computer-wincounter">
-                                AI wins: <br></br>
+                            <div className="ui header computer-wincounter">
+                                AI <br></br>
                                 {cpuWinWounter}
                             </div>
                         </div>
@@ -111,8 +111,8 @@ class RockPaperScissors extends Component {
                         </div>
                     </div>
                     <div className="row">
-                        
-                            
+
+
                     </div>
                     <div className="game-info">
                     </div>

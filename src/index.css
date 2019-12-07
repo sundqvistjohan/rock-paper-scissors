@@ -2,7 +2,7 @@ body {
   padding-top: 6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(255, 230, 51);
+  background-color: rgb(255, 234, 51);
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -18,7 +18,25 @@ code {
   width: 100px;
   display: inline-block;
 }
+.weapon-image.rock {
+  -webkit-transform: rotate(290deg);
+  -ms-transform: rotate(290deg);
+  transform: rotate(290deg);
+}
+.weapon-image.paper {
+  -webkit-transform: rotate(324deg);
+  -ms-transform: rotate(324deg);
+  transform: rotate(324deg);
+  padding-bottom: 8px;
+}
 
-.column.weapon img:active {
-  opacity: .7;
+#weapon img:active {
+  opacity: .5;
+}
+
+.withBorder {
+  color: #000;
+  border: solid 2px;
+  padding: 12px 12px 12px 12px;
+  margin: 0px 0px 10px 0;
 }
