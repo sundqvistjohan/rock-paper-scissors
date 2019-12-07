@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import GameRPS from "./GameRPS"
+import rock from "./img/rock.png"
+import paper from "./img/paper.png"
+import scissors from "./img/scissors.png"
 
 class RockPaperScissors extends Component {
     constructor() {
@@ -37,6 +40,8 @@ class RockPaperScissors extends Component {
         let playerChoice = this.state.playerChoice
         if (playerChoice != null) {
             return <div id="player-choice">You chose {playerChoice}</div>
+        } else {
+            return <div></div>
         }
     }
 
@@ -44,39 +49,76 @@ class RockPaperScissors extends Component {
         let cpuChoice = this.state.cpuChoice
         if (cpuChoice != null) {
             return <div id="computer-choice">AI chose {cpuChoice}</div>
+        } else {
+            return <div></div>
         }
     }
 
     render() {
         let renderResult = this.playRound()
-        let renderPlayerChoice = this.displayPlayerChoice() 
+        let renderPlayerChoice = this.displayPlayerChoice()
         let renderCpuChoice = this.displayComputerChoice()
         let playerWinCounter = this.state.playerWins
         let cpuWinWounter = this.state.cpuWins
         return (
-            <>
-                <div>
-                    <button id="rock-button" onClick={() => this.playerSelection('rock')}>Rock</button>
-                    <button id="paper-button" onClick={() => this.playerSelection('paper')}>Paper</button>
-                    <button id="scissors-button" onClick={() => this.playerSelection('scissors')}>Scissors</button>
-                </div>
+            <div class="ui main container">
+                <div className="ui three column grid">
+                    <div className="row">
+                        <div className="column weapon">
+                            <img src={rock} class="weapon-image" onClick={() => this.playerSelection('rock')} />
+                            <p>ROCK</p>
+                        </div>
+                        <div className="column weapon">
+                            <img src={paper} class="weapon-image" onClick={() => this.playerSelection('paper')} />
+                            <p>PAPER</p>
+                        </div>
+                        <div className="column weapon">
+                            <img src={scissors} class="weapon-image" onClick={() => this.playerSelection('scissors')} />
+                            <p>SCISSORS</p>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="centered column">
+                            <div id="round-info">
+                                {renderPlayerChoice}<br></br>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="centered column">
+                            <div className="player-wincounter">
+                                Player wins: <br></br>
+                                {playerWinCounter}
+                            </div>
+                        </div>
+                        <div className="centered column">
+                            <div id="round-result">
+                                {renderResult}<br></br>
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="computer-wincounter">
+                                AI wins: <br></br>
+                                {cpuWinWounter}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="centered column">
+                            <div id="round-info">
+                                {renderCpuChoice}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        
+                            
+                    </div>
+                    <div className="game-info">
+                    </div>
 
-                <div id="round-info">
-                    {renderPlayerChoice}<br></br>
-                    {renderCpuChoice}<br></br>
                 </div>
-                <div id="round-result">
-                    {renderResult}<br></br>
-                </div>
-                <div className="game-info">
-                    <div className="player-wincounter">
-                        Player wins: {playerWinCounter}
-                    </div>
-                    <div className="computer-wincounter">
-                        AI wins: {cpuWinWounter}
-                    </div>
-                </div>
-            </>
+            </div>
         )
     }
 }
