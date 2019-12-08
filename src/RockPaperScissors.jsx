@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import GameRPS from "./GameRPS"
-import rock from "./img/rock.png"
-import paper from "./img/paper.png"
-import scissors from "./img/scissors.png"
+import Player from "./Player"
 
 class RockPaperScissors extends Component {
     constructor() {
@@ -63,20 +61,7 @@ class RockPaperScissors extends Component {
         return (
             <div class="ui main container">
                 <div className="ui three column grid">
-                    <div className="row">
-                        <div className="column right aligned" id="weapon">
-                            <img src={rock} class="weapon-image rock" onClick={() => this.playerSelection('rock')} />
-                            <p>ROCK</p>
-                        </div>
-                        <div className="column" id="weapon">
-                            <img src={paper} class="weapon-image paper" onClick={() => this.playerSelection('paper')} />
-                            <p>PAPER</p>
-                        </div>
-                        <div className="column left aligned" id="weapon">
-                            <img src={scissors} class="weapon-image" onClick={() => this.playerSelection('scissors')} />
-                            <p>SCISSORS</p>
-                        </div>
-                    </div>
+                    <Player choice={this.playerSelection}/>
                     <div className="row">
                         <div className="centered column">
                             <div id="round-info">
