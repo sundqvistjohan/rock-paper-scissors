@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import GameRPS from "./GameRPS"
 import Player from "./Player"
+import rock from "./img/rock.png"
+import paper from "./img/paper.png"
+import scissors from "./img/scissors.png"
 
 class RockPaperScissors extends Component {
     constructor() {
@@ -36,8 +39,22 @@ class RockPaperScissors extends Component {
 
     displayPlayerChoice = () => {
         let playerChoice = this.state.playerChoice
+        let img = null
+        if (playerChoice === 'rock') {
+            img = rock
+        } else if (playerChoice === 'paper') {
+            img = paper
+        } else if (playerChoice === 'scissors') {
+            img = scissors
+        }
+
         if (playerChoice != null) {
-            return <div id="player-choice">You chose {playerChoice}</div>
+            return (
+                <>
+                    <div id="player-choice">You chose {playerChoice}</div>
+                    <img src={img} width="60px" />
+                </>
+            )
         } else {
             return <div></div>
         }
@@ -45,8 +62,21 @@ class RockPaperScissors extends Component {
 
     displayComputerChoice = () => {
         let cpuChoice = this.state.cpuChoice
+        let img = null
+        if (cpuChoice === 'rock') {
+            img = rock
+        } else if (cpuChoice === 'paper') {
+            img = paper
+        } else if (cpuChoice === 'scissors') {
+            img = scissors
+        }
         if (cpuChoice != null) {
-            return <div id="computer-choice">AI chose {cpuChoice}</div>
+            return (
+                <>
+                    <img src={img} width="60px" />
+                    <div id="computer-choice">AI chose {cpuChoice}</div>
+                </>
+            )
         } else {
             return <div></div>
         }
@@ -61,8 +91,8 @@ class RockPaperScissors extends Component {
         return (
             <div class="ui main container">
                 <div className="ui three column grid">
-                    <Player choice={this.playerSelection}/>
-                    
+                    <Player choice={this.playerSelection} />
+
                     <div className="row">
                         <div className="centered column">
                             <div id="round-info">
