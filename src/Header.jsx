@@ -5,9 +5,9 @@ const Header = () => {
     return (
         <nav className='ui secondary menu'>
             <div className='ui container'>
-                <Link className="ui item" to ='/'>RPS</Link>
+                <Link className="ui item" to ='/'>ROCK PAPER SCISSORS</Link>
                 <div className="right menu">
-                    <NavLink id="reset" onClick={() => window.location.reload()} className="ui item" to='/'>RESET GAME</NavLink>
+                    <Link id="reset" onClick={() => window.location.reload()} className="ui item" to='/'>RESET GAME</Link>
                 </div>
             </div>
         </nav>

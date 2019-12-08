@@ -12,6 +12,24 @@ code {
     monospace;
 }
 
+.landing.header {
+  padding-top: 3rem;
+  font-family: 'bonk_offsetregular';
+  font-size: 8rem;
+  line-height: 7rem;
+  color:rgb(40, 40, 40);
+}
+
+.ui.secondary.menu {
+  font-family: 'bonk_offsetregular';
+  
+}
+
+#landing-rules {
+  font-size: 16px;
+  line-height: 16px;
+}
+
 .weapon-image {
   height: 100px;
   width: 100px;
@@ -35,4 +53,13 @@ code {
 
 #weapon img:hover {
   opacity: .8;
+}
+
+@font-face {
+  font-family: 'bonk_offsetregular';
+  src: url('./fonts/bonkoff-webfont.woff2') format('woff2'),
+       url('./fonts/bonkoff-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
