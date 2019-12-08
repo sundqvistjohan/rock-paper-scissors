@@ -1,6 +1,6 @@
 context('Rock-Paper-Scissors', () => {
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('/rps')
     });
     describe('Visitor can play a game of Rock-Paper-Scissors', () => {
         it('has a Rock image', () => {
