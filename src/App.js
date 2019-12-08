@@ -10,7 +10,7 @@ function App() {
       <Route path="/" render={(props) => (props.location.pathname !== "/") && <Header />}></Route>
       <Switch>
         <Route exact path='/' component={Landing}></Route>
-        <Route exact path='/rps' component={RockPaperScissors}></Route>
+        <Route exact path='/rockpaperscissors' component={RockPaperScissors}></Route>
       </Switch>
     </div>
   );

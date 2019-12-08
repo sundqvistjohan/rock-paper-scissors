@@ -1,10 +1,8 @@
 import React from "react"
-import rock from "./img/rock.png"
 
 const Landing = () => {
     return (
         <div className='ui main container'>
-            {/* <img src={rock} width="200px"/> */}
             <div className="landing header">
                 ROCK<br></br> PAPER<br></br> SCISSORS
                 </div>
@@ -17,7 +15,7 @@ const Landing = () => {
                 3. Scissors beats paper<br></br>
             </div>
             <div className="link">
-                <a href="/rps">PLAY</a>
+                <a href="/rockpaperscissors">PLAY</a>
             </div>
         </div>
     )
