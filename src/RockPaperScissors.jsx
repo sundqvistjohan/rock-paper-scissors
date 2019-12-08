@@ -62,6 +62,7 @@ class RockPaperScissors extends Component {
             <div class="ui main container">
                 <div className="ui three column grid">
                     <Player choice={this.playerSelection}/>
+                    
                     <div className="row">
                         <div className="centered column">
                             <div id="round-info">
@@ -77,7 +78,7 @@ class RockPaperScissors extends Component {
                             </div>
                         </div>
                         <div className="centered column">
-                            <div id="ui header round-result">
+                            <div className="ui header" id="round-result">
                                 {renderResult}<br></br>
                             </div>
                         </div>
@@ -95,13 +96,6 @@ class RockPaperScissors extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-
-
-                    </div>
-                    <div className="game-info">
-                    </div>
-
                 </div>
             </div>
         )

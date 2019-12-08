@@ -16,7 +16,7 @@ class Player extends Component {
                     <p>PAPER</p>
                 </div>
                 <div className="column left aligned" id="weapon">
-                    <img src={scissors} class="weapon-image" onClick={() => this.props.choice('scissors')} />
+                    <img src={scissors} class="weapon-image scissors" onClick={() => this.props.choice('scissors')} />
                     <p>SCISSORS</p>
                 </div>
             </div>
