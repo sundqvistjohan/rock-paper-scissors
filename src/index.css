@@ -1,17 +1,65 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(255, 234, 51);
+  font-size: 20px;
+  font-weight: bold;
   text-align: center;
-  position: fixed;
-  top: 30%;
-  left: 50%
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.landing.header {
+  padding-top: 3rem;
+  font-family: 'bonk_offsetregular';
+  font-size: 8rem;
+  line-height: 7rem;
+  color:rgb(40, 40, 40);
+}
+
+.ui.secondary.menu {
+  font-family: 'bonk_offsetregular';
+  
+}
+
+#landing-rules {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.weapon-image {
+  height: 100px;
+  width: 100px;
+  display: inline-block;
+}
+.weapon-image.rock {
+  -webkit-transform: rotate(290deg);
+  -ms-transform: rotate(290deg);
+  transform: rotate(290deg);
+}
+.weapon-image.paper {
+  -webkit-transform: rotate(324deg);
+  -ms-transform: rotate(324deg);
+  transform: rotate(324deg);
+  padding-bottom: 8px;
+}
+
+#weapon img:active {
+  padding: 8px 8px 8px 8px;
+}
+
+#weapon img:hover {
+  opacity: .8;
+}
+
+@font-face {
+  font-family: 'bonk_offsetregular';
+  src: url('./fonts/bonkoff-webfont.woff2') format('woff2'),
+       url('./fonts/bonkoff-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
