@@ -8,12 +8,13 @@ import scissors from "./img/scissors.png"
 class RockPaperScissors extends Component {
     constructor() {
         super();
-        new GameRPS
+        new GameRPS()
         this.state = {
             playerChoice: null,
             cpuChoice: null,
             playerWins: 0,
             cpuWins: 0,
+            roundWinner: null,
         }
     }
 
@@ -24,6 +25,7 @@ class RockPaperScissors extends Component {
 
     playRound = () => {
         let roundResult = GameRPS.playRound(this.state.playerChoice, this.state.cpuChoice)
+        this.setState({ roundWinner: roundResult })
         if (roundResult === 'draw') {
             return <div>IT'S A DRAW!</div>
         } else if (roundResult === 'playerWin') {
@@ -37,55 +39,34 @@ class RockPaperScissors extends Component {
         }
     }
 
-    displayPlayerChoice = () => {
+    displayWeaponChoices = () => {
         let playerChoice = this.state.playerChoice
-        let img = null
-        if (playerChoice === 'rock') {
-            img = rock
-        } else if (playerChoice === 'paper') {
-            img = paper
-        } else if (playerChoice === 'scissors') {
-            img = scissors
+        let cpuChoice = this.state.cpuChoice
+        let imgSrcPlayer, imgSrcComputer
+
+        if (this.state.roundWinner === 'playerWin') {
+            imgSrcPlayer = playerChoice + '_win.png'
+            imgSrcComputer = cpuChoice + '_lose.png'
+        } else {
+            imgSrcPlayer = playerChoice + '_lose.png'
+            imgSrcComputer = cpuChoice + '_win.png'
         }
 
         if (playerChoice != null) {
             return (
                 <>
                     <div id="player-choice">You chose {playerChoice}</div>
-                    <img src={img} width="60px" />
-                </>
-            )
-        } else {
-            return <div></div>
-        }
-    }
-
-    displayComputerChoice = () => {
-        let cpuChoice = this.state.cpuChoice
-        let img = null
-        if (cpuChoice === 'rock') {
-            img = rock
-        } else if (cpuChoice === 'paper') {
-            img = paper
-        } else if (cpuChoice === 'scissors') {
-            img = scissors
-        }
-        if (cpuChoice != null) {
-            return (
-                <>
-                    <img src={img} width="60px" />
+                    <img src={require('./img/' + imgSrcPlayer)} alt="playerweapon" width="60px" />
+                    <div></div>
+                    <img src={require('./img/' + imgSrcComputer)} alt="computerweapon" width="60px" />
                     <div id="computer-choice">AI chose {cpuChoice}</div>
                 </>
             )
-        } else {
-            return <div></div>
         }
     }
 
     render() {
-        let renderResult = this.playRound()
-        let renderPlayerChoice = this.displayPlayerChoice()
-        let renderCpuChoice = this.displayComputerChoice()
+        let renderWeapons = this.displayWeaponChoices()
         let playerWinCounter = this.state.playerWins
         let cpuWinWounter = this.state.cpuWins
         return (
@@ -95,13 +76,6 @@ class RockPaperScissors extends Component {
 
                     <div className="row">
                         <div className="centered column">
-                            <div id="round-info">
-                                {renderPlayerChoice}<br></br>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="centered column">
                             <div className="ui header player-wincounter">
                                 PLAYER <br></br>
                                 {playerWinCounter}
@@ -109,20 +83,13 @@ class RockPaperScissors extends Component {
                         </div>
                         <div className="centered column">
                             <div className="ui header" id="round-result">
-                                {renderResult}<br></br>
+                                {renderWeapons}<br></br>
                             </div>
                         </div>
                         <div className="column">
                             <div className="ui header computer-wincounter">
                                 AI <br></br>
                                 {cpuWinWounter}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="centered column">
-                            <div id="round-info">
-                                {renderCpuChoice}
                             </div>
                         </div>
                     </div>
