@@ -20,9 +20,18 @@ code {
   color:rgb(40, 40, 40);
 }
 
+#rules {
+  /* text-align: justify; */
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .ui.secondary.menu {
   font-family: 'bonk_offsetregular';
-  
+}
+
+.ui.buttons {
+  padding-top: 2rem;
 }
 
 #landing-rules {
@@ -61,5 +70,8 @@ code {
        url('./fonts/bonkoff-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
 
+h2 {
+  margin: 10px 0px 2px;
 }
