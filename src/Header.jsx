@@ -1,5 +1,5 @@
 import React from "react"
-import { NavLink, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Header = () => {
     return (
@@ -7,7 +7,7 @@ const Header = () => {
             <div className='ui container'>
                 <Link className="ui item" to ='/'>ROCK PAPER SCISSORS</Link>
                 <div className="right menu">
-                    <Link id="reset" onClick={() => window.location.reload()} className="ui item" to='/'>RESET GAME</Link>
+                    <Link id="reset" onClick={() => window.location.reload()} className="ui item" to='/rockpaperscissors'>RESET GAME</Link>
                 </div>
             </div>
         </nav>
