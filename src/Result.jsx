@@ -1,23 +1,15 @@
 import React, { Component } from "react"
-import GameRPS from "./GameRPS"
 
 class Result extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            playerWins: 0,
-            cpuWins: 0,
-        }
-    }
 
-    renderWinner = (roundResult) => {
-        if (roundResult === 'draw') {
+    renderWinner = () => {
+        let roundParams = this.props.roundParams
+
+        if (roundParams.roundWinner === 'draw') {
             return <div>IT'S A DRAW!</div>
-        } else if (roundResult === 'playerWin') {
-            this.state.playerWins++
+        } else if (roundParams.roundWinner === 'playerWin') {
             return <div style={{ color: "darkgreen" }}>PLAYER WINS!</div>
-        } else if (roundResult === 'computerWin') {
-            this.state.cpuWins++
+        } else if (roundParams.roundWinner === 'computerWin') {
             return <div style={{ color: "firebrick" }}>AI WINS!</div>
         } else {
             return <div></div>
@@ -25,15 +17,17 @@ class Result extends Component {
     }
 
     displayWeaponChoices = (roundResult) => {
-        let playerChoice = this.props.player
-        let cpuChoice = this.props.comp
+        let roundParams = this.props.roundParams
+        let playerChoice = roundParams.playerChoice
+        let cpuChoice = roundParams.cpuChoice
+
         let imgSrcPlayer = playerChoice
         let imgSrcComputer = cpuChoice
 
-        if (roundResult === 'playerWin') {
+        if (roundParams.roundWinner === 'playerWin') {
             imgSrcPlayer += '_win.png'
             imgSrcComputer += '_lose.png'
-        } else if (roundResult === 'computerWin') {
+        } else if (roundParams.roundWinner === 'computerWin') {
             imgSrcPlayer += '_lose.png'
             imgSrcComputer += '_win.png'
         } else {
@@ -55,13 +49,11 @@ class Result extends Component {
     }
 
     render() {
-        let roundResult = GameRPS.playRound(this.props.player, this.props.comp)
+        let renderResult = this.renderWinner()
+        let renderWeapons = this.displayWeaponChoices()
 
-        let renderResult = this.renderWinner(roundResult)
-        let renderWeapons = this.displayWeaponChoices(roundResult)
-
-        let playerWinCounter = this.state.playerWins
-        let cpuWinWounter = this.state.cpuWins
+        let playerWinCounter = this.props.roundParams.playerWins
+        let cpuWinWounter = this.props.roundParams.cpuWins
 
         return (
             <>

@@ -10,20 +10,39 @@ class RockPaperScissors extends Component {
         this.state = {
             playerChoice: null,
             cpuChoice: null,
+            roundWinner: null,
+            playerWins: 0,
+            cpuWins: 0,
         }
     }
 
-    playerSelection = (choice) => {
-        this.setState({ playerChoice: choice })
-        this.setState({ cpuChoice: GameRPS.computerChoice() })
+    playRound = (choice) => {
+        let computerChoice = GameRPS.computerChoice()
+        let roundResult = GameRPS.playRound(choice, computerChoice)
+        
+        this.increaseCounter(roundResult)
+
+        this.setState({ 
+            playerChoice: choice,
+            cpuChoice: computerChoice,
+            roundWinner: roundResult
+        }) 
+    }
+
+    increaseCounter(roundResult) {
+        if (roundResult === 'playerWin') {
+            this.setState({ playerWins: this.state.playerWins + 1})
+        } else if (roundResult === 'computerWin') {
+            this.setState({ cpuWins: this.state.cpuWins + 1})
+        }
     }
 
     render() {
         return (
             <div className="ui main container">
                 <div className="ui three column grid">
-                    <Player choice={this.playerSelection} />
-                    <Result player={this.state.playerChoice} comp={this.state.cpuChoice} />
+                    <Player choice={this.playRound} />
+                    <Result roundParams={this.state} />
                 </div>
             </div>
         )
