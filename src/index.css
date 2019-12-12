@@ -2,7 +2,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(255, 234, 51);
-  font-size: 20px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
 }
@@ -15,23 +15,90 @@ code {
 .landing.header {
   padding-top: 3rem;
   font-family: 'bonk_offsetregular';
-  font-size: 8rem;
-  line-height: 7rem;
+  font-size: 7rem;
+  line-height: 6rem;
   color:rgb(40, 40, 40);
 }
 
 #rules {
-  /* text-align: justify; */
   display: inline-block;
   vertical-align: middle;
 }
 
+#bonkoff-header {
+  font-family: 'bonk_offsetregular';
+  font-size: 34px;
+  line-height: 70px;
+}
+
+#player {
+  background-color: rgb(163, 233, 163);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border: solid 2px;
+  border-color: gray;
+}
+
+#player img:active {
+  padding: 8px 8px 8px 8px;
+}
+
+#player img:hover {
+  opacity: .2;
+}
+
+#playerWin, #computerWin, #draw {
+  min-height: 260px;
+  top: 50%;
+  position: relative;
+  text-align: center;
+  border-left: solid 2px;
+  border-right: solid 2px;
+  border-color:gray
+}
+
+#playerWin {
+  background-color: rgb(163, 233, 163);
+}
+
+#computerWin {
+  background-color: rgb(238, 165, 165);
+}
+
+#draw {
+  background-color: ghostwhite;
+}
+
+#winner {
+  padding: 20px;
+  font-size: 30px;
+}
+
+#computer {
+  background-color: rgb(238, 165, 165);
+  border: solid 2px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: gray;
+}
+
+#computer img:hover {
+  cursor: not-allowed;
+}
+
 .ui.secondary.menu {
   font-family: 'bonk_offsetregular';
+  font-size: 16px;
+  margin-bottom: 0;
 }
 
 .ui.buttons {
   padding-top: 2rem;
+}
+
+.ui.three.column.grid {
+  margin: 0px;
+  padding: 0px;
 }
 
 #landing-rules {
@@ -43,25 +110,6 @@ code {
   height: 100px;
   width: 100px;
   display: inline-block;
-}
-.weapon-image.rock {
-  -webkit-transform: rotate(290deg);
-  -ms-transform: rotate(290deg);
-  transform: rotate(290deg);
-}
-.weapon-image.paper {
-  -webkit-transform: rotate(324deg);
-  -ms-transform: rotate(324deg);
-  transform: rotate(324deg);
-  padding-bottom: 8px;
-}
-
-#weapon img:active {
-  padding: 8px 8px 8px 8px;
-}
-
-#weapon img:hover {
-  opacity: .8;
 }
 
 @font-face {
