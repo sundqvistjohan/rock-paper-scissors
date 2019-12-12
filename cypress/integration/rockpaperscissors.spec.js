@@ -1,6 +1,6 @@
 context('Rock-Paper-Scissors', () => {
     beforeEach(() => {
-        cy.visit('/rps')
+        cy.visit('/rockpaperscissors')
     });
     describe('Visitor can play a game of Rock-Paper-Scissors', () => {
         it('has a Rock image', () => {
@@ -22,21 +22,21 @@ context('Rock-Paper-Scissors', () => {
         });
 
         it('can choose Rock', () => {
-            cy.get('.weapon-image.rock')
+            cy.get('.weapon-image.rock:first')
               .click()
               .get('#player-choice')
               .should('contain', 'You chose rock')
         });
 
         it('can read the computers choice', () => {
-            cy.get('.weapon-image.paper')
+            cy.get('.weapon-image.paper:first')
               .click()
               .get('#computer-choice')
               .should('contain', 'AI chose ')
         });
 
         it('gets a result', () => {
-            cy.get('.weapon-image.scissors')
+            cy.get('.weapon-image.scissors:first')
               .click()
               .get('#round-result')
               .should('contain', '!')
