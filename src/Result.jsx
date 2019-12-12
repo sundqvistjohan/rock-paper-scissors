@@ -8,15 +8,15 @@ class Result extends Component {
         if (roundParams.roundWinner === 'draw') {
             return <div>IT'S A DRAW!</div>
         } else if (roundParams.roundWinner === 'playerWin') {
-            return <div style={{ color: "darkgreen" }}>PLAYER WINS!</div>
+            return <div>PLAYER WINS!</div>
         } else if (roundParams.roundWinner === 'computerWin') {
-            return <div style={{ color: "firebrick" }}>AI WINS!</div>
+            return <div>AI WINS!</div>
         } else {
             return <div></div>
         }
     }
 
-    displayWeaponChoices = (roundResult) => {
+    renderResult = () => {
         let roundParams = this.props.roundParams
         let playerChoice = roundParams.playerChoice
         let cpuChoice = roundParams.cpuChoice
@@ -38,19 +38,19 @@ class Result extends Component {
         if (playerChoice != null) {
             return (
                 <>
-                    <div id="player-choice">You chose {playerChoice}</div>
-                    <img src={require('./img/' + imgSrcPlayer)} alt="playerweapon" width="60px" />
-                    <div></div>
-                    <img src={require('./img/' + imgSrcComputer)} alt="computerweapon" width="60px" />
-                    <div id="computer-choice">AI chose {cpuChoice}</div>
+                    <div id="player-choice">You chose {playerChoice}!</div>
+                    <img src={require('./img/' + imgSrcPlayer)} alt="playerweapon" width="80px" />
+                    <div id="bonkoff-header">{this.renderWinner()}</div>
+                    <img src={require('./img/' + imgSrcComputer)} alt="computerweapon" width="80px" />
+                    <div id="computer-choice">AI chose {cpuChoice}!</div>
                 </>
             )
         }
     }
 
     render() {
-        let renderResult = this.renderWinner()
-        let renderWeapons = this.displayWeaponChoices()
+        // let renderResult = this.renderWinner()
+        let displayResult = this.renderResult()
 
         let playerWinCounter = this.props.roundParams.playerWins
         let cpuWinWounter = this.props.roundParams.cpuWins
@@ -58,20 +58,18 @@ class Result extends Component {
         return (
             <>
                 <div className="row">
-                    <div className="centered column">
+                    <div className="two wide centered column">
                         <div className="ui header player-wincounter">
                             PLAYER <br></br>
                             {playerWinCounter}
                         </div>
                     </div>
-                    <div className="centered column">
+                    <div className="eight wide centered column">
                         <div className="ui header" id="round-result">
-                            {renderResult}
-
-                            {renderWeapons}
+                            {displayResult}
                         </div>
                     </div>
-                    <div className="column">
+                    <div className="two wide centered column">
                         <div className="ui header computer-wincounter">
                             AI <br></br>
                             {cpuWinWounter}

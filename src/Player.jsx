@@ -7,16 +7,16 @@ class Player extends Component {
     render() {
         return (
             <div className="row">
-                <div className="column right aligned" id="weapon">
-                    <img src={rock} class="weapon-image rock" alt="rock" onClick={() => this.props.choice('rock')} />
-                    <p>ROCK</p>
+                <div className="column right aligned" id="weapon" >
+                    <img src={rock} class="weapon-image rock" alt="rock" onClick={() => {!this.props.computer && this.props.choice('rock')}}/>
+                    <p style={{paddingRight: '20px' }}>ROCK</p>
                 </div>
-                <div className="column" id="weapon">
-                    <img src={paper} class="weapon-image paper" alt="paper" onClick={() => this.props.choice('paper')} />
+                <div className="column middle aligned" id="weapon">
+                    <img src={paper} class="weapon-image paper" alt="paper" onClick={() => {!this.props.computer &&this.props.choice('paper')}} />
                     <p>PAPER</p>
                 </div>
                 <div className="column left aligned" id="weapon">
-                    <img src={scissors} class="weapon-image scissors" alt="scissors" onClick={() => this.props.choice('scissors')} />
+                    <img src={scissors} class="weapon-image scissors" alt="scissors" onClick={() => {!this.props.computer && this.props.choice('scissors')}} />
                     <p>SCISSORS</p>
                 </div>
             </div>

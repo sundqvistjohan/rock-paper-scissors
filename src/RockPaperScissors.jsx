@@ -10,7 +10,7 @@ class RockPaperScissors extends Component {
         this.state = {
             playerChoice: null,
             cpuChoice: null,
-            roundWinner: null,
+            roundWinner: 'draw',
             playerWins: 0,
             cpuWins: 0,
         }
@@ -19,32 +19,45 @@ class RockPaperScissors extends Component {
     playRound = (choice) => {
         let computerChoice = GameRPS.computerChoice()
         let roundResult = GameRPS.playRound(choice, computerChoice)
-        
+
         this.increaseCounter(roundResult)
 
-        this.setState({ 
+        this.setState({
             playerChoice: choice,
             cpuChoice: computerChoice,
             roundWinner: roundResult
-        }) 
+        })
     }
 
     increaseCounter(roundResult) {
         if (roundResult === 'playerWin') {
-            this.setState({ playerWins: this.state.playerWins + 1})
+            this.setState({ playerWins: this.state.playerWins + 1 })
         } else if (roundResult === 'computerWin') {
-            this.setState({ cpuWins: this.state.cpuWins + 1})
+            this.setState({ cpuWins: this.state.cpuWins + 1 })
         }
     }
 
     render() {
         return (
-            <div className="ui main container">
-                <div className="ui three column grid">
-                    <Player choice={this.playRound} />
-                    <Result roundParams={this.state} />
+            <>
+                <div className="ui main container">
+                    <div className="ui three column centered grid" id="player">
+                        <div id="bonkoff-header">PLAYER</div>
+                        <Player choice={this.playRound} />
+                    </div>
                 </div>
-            </div>
+                <div className="ui main container">
+                    <div className="ui three column grid middle aligned" id={this.state.roundWinner}>
+                        <Result roundParams={this.state} />
+                    </div>
+                </div>
+                <div className="ui main container">
+                    <div className="ui three column centered grid" id="computer">
+                        <div id="bonkoff-header">AI</div>
+                        <Player computer={this.playRound} />
+                    </div>
+                </div>
+            </>
         )
     }
 }
