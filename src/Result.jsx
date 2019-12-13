@@ -39,9 +39,9 @@ class Result extends Component {
             return (
                 <>
                     <div id="player-choice">You chose {playerChoice}!</div>
-                    <img src={require('./img/' + imgSrcPlayer)} alt="playerweapon" width="80px" />
+                    <img src={require('./img/' + imgSrcPlayer)} alt="playerweapon" className="weapon-image" />
                     <div id="bonkoff-header">{this.renderWinner()}</div>
-                    <img src={require('./img/' + imgSrcComputer)} alt="computerweapon" width="80px" />
+                    <img src={require('./img/' + imgSrcComputer)} alt="computerweapon" className="weapon-image" />
                     <div id="computer-choice">AI chose {cpuChoice}!</div>
                 </>
             )
@@ -49,7 +49,6 @@ class Result extends Component {
     }
 
     render() {
-        // let renderResult = this.renderWinner()
         let displayResult = this.renderResult()
 
         let playerWinCounter = this.props.roundParams.playerWins
