@@ -6,7 +6,6 @@ import paper_lose from "./img/paper_lose.png"
 import scissors_win from "./img/scissors_win.png"
 import scissors_lose from "./img/scissors_lose.png"
 
-
 const Landing = () => {
     return (
         <div className='ui main container'>
@@ -20,20 +19,19 @@ const Landing = () => {
                 <h2>RULES</h2>
                 <div className="row" id="rules">
                     <div className="right aligned column">
-                        <p>Rock beats scissors</p>
-                        <img src={rock_win} alt="rock" width="75px" />
-                        <img src={scissors_lose} alt="scissors" width="75px" /><br></br>
+                        <p>Rock crushes scissors</p>
+                        <img src={rock_win} alt="rock" className="weapon-image" /><br></br>
+                        <img src={scissors_lose} alt="scissors" className="weapon-image" />
                     </div>
                     <div className="center aligned column">
-                        <p>Paper beats rock</p>
-                        <img src={paper_win} alt="paper" width="75px" />
-                        &nbsp;&nbsp;
-                        <img src={rock_lose} alt="rock" width="75px" /><br></br>
+                        <p>Paper covers rock</p>
+                        <img src={paper_win} alt="paper" className="weapon-image" /><br></br>
+                        <img src={rock_lose} alt="rock" className="weapon-image" />
                     </div>
                     <div className="left aligned column">
-                        <p>Scissors beats paper</p>
-                        <img src={scissors_win} alt="scissors" width="75px" />
-                        <img src={paper_lose} alt="paper" width="75px" /><br></br>
+                        <p>Scissors cuts paper</p>
+                        <img src={scissors_win} alt="scissors" className="weapon-image" /><br></br>
+                        <img src={paper_lose} alt="paper" className="weapon-image" />
                     </div>
                 </div>
             </div>

@@ -48,6 +48,17 @@ yarn run specs
 * Add styling
 * Add landing page
 
+## Acknowledgements
+
+In addition to official documentation of the dependencies used the following resources has been used during the creation of this application.
+
+
+[React-indepth - The React Life Cycle](https://developmentarc.gitbooks.io/react-indepth/content/life_cycle/introduction.html) has been helpful for understanding the life cycle of React components.
+https://daveceddia.com/why-not-modify-react-state-directly/
+https://stackoverflow.com/questions/46939850/how-to-hide-header-component-in-react-router-dom
+https://stackoverflow.com/questions/51109495/how-to-update-parent-state-from-child-component-in-react-send-a-paramater
+https://www.freecodecamp.org/forum/t/problem-with-image-path-generated-from-function-in-react/249420/9
+
 ## License
 
 Distributed under the MIT License.

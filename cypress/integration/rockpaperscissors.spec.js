@@ -41,6 +41,20 @@ context('Rock-Paper-Scissors', () => {
               .get('#round-result')
               .should('contain', '!')
         });
+
+        it('can reset the game', () => {
+          cy.get('.weapon-image.scissors:first')
+            .click()
+            .click()
+            .click()
+            .click()
+            .click()
+            .click()
+            .get('#reset')
+            .click()
+            .get('.player-wincounter')
+            .should('contain', 'PLAYER 0')
+      });
     })
     
 })
